@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #0b0b0b;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+}
+
+/* Background grid animation */
+@keyframes grid-move {
+  0% { transform: perspective(1000px) rotateX(60deg) translateY(0); }
+  100% { transform: perspective(1000px) rotateX(60deg) translateY(40px); }
+}
+
+.animate-grid {
+  animation: grid-move 4s linear infinite;
+}
